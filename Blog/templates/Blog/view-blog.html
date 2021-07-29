@@ -1,0 +1,36 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block content %}
+<div class="main">
+  <!-- <h1>Responsive Card Grid Layout</h1> -->
+  <ul class="cards">
+  {% for b in blog %}
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image">
+          <img src="https://blog.capterra.com/wp-content/uploads/2019/10/HEAD-Top_9_Medical_Apps_for_Doctors_Hero_no_text.png" width="500px">
+        </div>
+        <div class="card_content">
+          <h2 class="card_title">{{b.title}}</h2>
+          <hr>
+          <p class="card_text">{{b.body}}</p>
+<!--           <button class="btn card_btn" >Read More</button>-->
+          <div class="card_info">
+            <!-- <span> Author </span>
+                      <p class="date"> Date </p> -->
+            <ul>
+              <li>{{b.author}}</li>
+              <li>{{b.publish.date}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+
+   {% endfor %}
+
+  </ul>
+</div>
+
+<!--<h3 class="made_by">bbbbb</h3> -->
+{% endblock content %}
